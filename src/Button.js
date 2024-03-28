@@ -33,17 +33,31 @@ function ButtonWithIcon({ buttonText, iconSrc }) {
           </svg>
         </div>
       </button>
-      {(isHovered || isFocused) && (
-        <img
-          src={iconSrc}
-          alt="Info Icon"
-          className="icon-image"
-          style={{
-            height: "20px",
-            opacity: 1,
-          }} /* Adjust opacity based on hover/focus */
-        />
-      )}
+
+      {/* <img
+        src={iconSrc}
+        alt="Info Icon"
+        className="icon-image"
+        style={{
+          height: "20px",
+          opacity: 1,
+        }} 
+      /> */}
+      <div class="menu-container">
+        <div id="anim">
+          <span class="tooltip" data-tooltip="📅 Schedule for later!">
+            <img
+              src={iconSrc}
+              alt="Info Icon"
+              className="icon-image"
+              style={{
+                height: "20px",
+                opacity: 1,
+              }}
+            />
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
