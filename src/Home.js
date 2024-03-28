@@ -8,9 +8,8 @@ function Home() {
   const [isFocused, setIsFocused] = useState(false);
   return (
     <div>
-      <a href="https://front.codes/" className="logo" target="_blank">
-        <img src="./logo-1.svg" alt="" />
-      </a>
+      <img src="./logo-1.svg" className="logo" alt="" />
+
       <input
         className="menu-icon"
         type="checkbox"

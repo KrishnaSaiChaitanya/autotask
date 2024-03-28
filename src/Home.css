@@ -276,7 +276,7 @@ h1 {
   z-index: 11;
   transition: all 250ms linear;
 }
-.logo img {
+.logo {
   height: 46px;
   width: auto;
   display: block;
@@ -288,7 +288,7 @@ h1 {
     right: 55px;
   }
   .logo {
-    left: 30px;
+    right: 40px;
   }
   .nav {
     right: 30px;
