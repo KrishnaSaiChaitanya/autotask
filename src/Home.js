@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import Animation from "./Animation";
 import ButtonWithIcon from "./Button";
+import EngineComponent from "./EngineComponent";
 
 function Home() {
   const [isHovered, setIsHovered] = useState(false);
@@ -56,7 +57,9 @@ function Home() {
         </ul>
       </nav>
       <div className="section-center">
-        <h1 className="mb-0">Welcome</h1>
+        {/* <h1 className="mb-0">Welcome</h1> */}
+        <EngineComponent />
+        {/* <Animation /> */}
       </div>
     </div>
   );
