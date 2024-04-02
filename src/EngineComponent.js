@@ -9,7 +9,7 @@ const TreeData = [
   {
     level: 0,
     nodes: [
-      { id: 1, task_name: "Parent", status: -1, percentage: 50, children: [] },
+      { id: 1, task_name: "Task 1", status: -1, percentage: 50, children: [] },
     ],
   },
   {
@@ -17,16 +17,16 @@ const TreeData = [
     nodes: [
       {
         id: 2,
-        task_name: "Child 1",
+        task_name: "Task 2",
         status: -1,
         percentage: 100,
         children: [],
       },
-      { id: 3, task_name: "Child 2", status: -1, percentage: 75, children: [] },
+      { id: 3, task_name: "Task 3", status: 1, percentage: 75, children: [] },
       {
         id: 4,
-        task_name: "Child 3",
-        status: -1,
+        task_name: "Task 4",
+        status: 0,
         percentage: 100,
         children: [],
       },
@@ -35,17 +35,17 @@ const TreeData = [
   {
     level: 2,
     nodes: [
-      { id: 5, task_name: "Subchild 1", status: 1, percentage: 100 },
-      { id: 6, task_name: "Subchild 2", status: 0, percentage: 50 },
-      { id: 7, task_name: "Subchild 3", status: 1, percentage: 0 },
+      { id: 5, task_name: "Task 6", status: 1, percentage: 100 },
+      { id: 6, task_name: "Task 7", status: 0, percentage: 50 },
+      { id: 7, task_name: "Task 8", status: 1, percentage: 0 },
     ],
   },
   {
     level: 3,
     nodes: [
-      { id: 8, task_name: "Subchild 1", status: 1, percentage: 100 },
-      { id: 9, task_name: "Subchild 2", status: 0, percentage: 50 },
-      { id: 10, task_name: "Subchild 3", status: 1, percentage: 0 },
+      { id: 8, task_name: "Task 9", status: 1, percentage: 100 },
+      { id: 9, task_name: "Task 10", status: 0, percentage: 50 },
+      { id: 10, task_name: "Task 11", status: 1, percentage: 0 },
     ],
   },
   {
