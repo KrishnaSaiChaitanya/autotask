@@ -9,15 +9,27 @@ const TreeData = [
   {
     level: 0,
     nodes: [
-      { id: 1, task_name: "Parent", status: 1, percentage: 50, children: [] },
+      { id: 1, task_name: "Parent", status: -1, percentage: 50, children: [] },
     ],
   },
   {
     level: 1,
     nodes: [
-      { id: 2, task_name: "Child 1", status: 1, percentage: 100, children: [] },
-      { id: 3, task_name: "Child 2", status: 0, percentage: 75, children: [] },
-      { id: 4, task_name: "Child 3", status: 1, percentage: 100, children: [] },
+      {
+        id: 2,
+        task_name: "Child 1",
+        status: -1,
+        percentage: 100,
+        children: [],
+      },
+      { id: 3, task_name: "Child 2", status: -1, percentage: 75, children: [] },
+      {
+        id: 4,
+        task_name: "Child 3",
+        status: -1,
+        percentage: 100,
+        children: [],
+      },
     ],
   },
   {
@@ -72,27 +84,42 @@ function EngineComponent() {
 
     if (parentElement) {
       const parentHtml = `
-      <div class="hv-item">
-        <div class="hv-item-parent">
-         <div id="${parentId}-content"></div>
+    <div class="hv-item">
+      <div class="hv-item-parent">
+       <div id="${parentId}-content"></div>
+      </div>
+      <div class="hv-item-children">
+        <div class="hv-item-child" id="${`node-${TreeData[level].nodes[0].id}`}">
+          <div id="node-${TreeData[level].nodes[0].id}-content"></div>
         </div>
-        <div class="hv-item-children">
-          <div class="hv-item-child" id="${`node-${TreeData[level].nodes[0].id}`}">
-            <div id="node-${TreeData[level].nodes[0].id}-content"></div>
-          </div>
-          <div class="hv-item-child" id="${`node-${TreeData[level].nodes[1].id}`}">
-            <div id="node-${TreeData[level].nodes[1].id}-content"></div>
-          </div>
-          <div class="hv-item-child" id="${`node-${TreeData[level].nodes[2].id}`}">
-            <div id="node-${TreeData[level].nodes[2].id}-content"></div>
-          </div>
+        <div class="hv-item-child" id="${`node-${TreeData[level].nodes[1].id}`}">
+          <div id="node-${TreeData[level].nodes[1].id}-content"></div>
+        </div>
+        <div class="hv-item-child" id="${`node-${TreeData[level].nodes[2].id}`}">
+          <div id="node-${TreeData[level].nodes[2].id}-content"></div>
         </div>
       </div>
-    `;
+    </div>
+  `;
       parentElement.innerHTML = parentHtml;
-      parentElement.id = `node-${TreeData[level].nodes[0].id + 30}`;
-      console.log("html added successfully");
+      // Change IDs of elements from the previous level
+      const prevLevel = level - 1;
+      const prevNodes = TreeData[prevLevel].nodes;
+      prevNodes.forEach((node) => {
+        const prevButton = document.getElementById(`node-${node.id}`);
+        if (prevButton) {
+          prevButton.id = `node-${node.id + 30}`;
+        }
+      });
+      const animationContainer = document.getElementById("animation-container");
+      ReactDOM.render(<Animation />, animationContainer);
+      const hvContainer = document.querySelector(".hv-container");
+      hvContainer.style.display = "none";
 
+      setTimeout(() => {
+        hvContainer.style.display = "block";
+        ReactDOM.unmountComponentAtNode(animationContainer);
+      }, 1000);
       // Render TreeNode components using ReactDOM.render
       const renderTreeNode = (id, node) => {
         const container = document.getElementById(`node-${id}-content`);
@@ -145,16 +172,6 @@ function EngineComponent() {
 
   const handleClick = (nodeId, nodeNames, level) => {
     const nextLevel = currentLevel + 1;
-
-    const animationContainer = document.getElementById("animation-container");
-    ReactDOM.render(<Animation />, animationContainer);
-    const hvContainer = document.querySelector(".hv-container");
-    hvContainer.style.display = "none";
-
-    setTimeout(() => {
-      hvContainer.style.display = "block";
-      ReactDOM.unmountComponentAtNode(animationContainer);
-    }, 1000);
     setCurrentLevel(nextLevel);
     console.log(currentLevel);
     addNextLevelTree(`node-${nodeId}`, level, nodeNames);

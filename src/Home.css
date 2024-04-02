@@ -15,24 +15,22 @@ body {
   background-repeat: repeat;
   background-size: 4%;
   height: 100vh;
+  overflow-y: scroll;
   width: 100%;
 }
 .section-center {
-  position: absolute;
-  top: 50%;
-  left: 0;
   display: block;
   width: 100%;
-  padding: 0;
+  height: 600px;
   margin: 0;
   z-index: 6;
   text-align: center;
-  transform: translateY(-50%);
+  overflow: auto;
 }
 h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  font-size: 7vw;
+  font-size: 3vw;
   line-height: 1;
   color: #ffeba7;
   text-align: center;

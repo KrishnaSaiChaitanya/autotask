@@ -9,7 +9,7 @@
 
   line-height: 1.5;
   font-weight: 500;
-  width: 160px;
+  width: 180px;
   border-radius: 9999rem;
   background: #efefef;
   position: relative;
@@ -23,9 +23,9 @@
   & > span.text {
     color: #121212;
     width: 100%;
-    text-align: left;
+    text-align: center;
     padding-block: 12px;
-    padding-left: 24px;
+    /* padding-left: 24px; */
     z-index: 2;
     transition: all 200ms ease;
   }
@@ -48,6 +48,20 @@
     background: #242424;
     position: absolute;
     right: 1px;
+    z-index: 1;
+  }
+  & > div.overlay-start {
+    color: #ededed;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: inherit;
+    background: green;
+    position: absolute;
+    left: 1px;
     z-index: 1;
   }
 }
