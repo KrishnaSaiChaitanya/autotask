@@ -11,6 +11,13 @@
   -webkit-flex-flow: row wrap;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .flex-item {
   color: #fff;
 
