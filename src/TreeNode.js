@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./TreeNode.css";
 
-function TreeNode({ name, percentage, status, onClick }) {
+function TreeNode({ name, percentage, status, onClick, clicked }) {
+  console.log(clicked, "my value");
   // Determine which image and background color to use based on the status
   let statusImage, backgroundColor;
   let iconSize = "20px"; // Default icon size
@@ -23,7 +24,7 @@ function TreeNode({ name, percentage, status, onClick }) {
 
   return (
     <div className="button-group" onClick={onClick}>
-      <button className="tree-node">
+      <button className={`tree-node ${clicked ? "clicked" : ""}`}>
         <div className="overlay-start" style={{ backgroundColor }}>
           {statusImage && (
             <img src={statusImage} style={{ height: iconSize }} />

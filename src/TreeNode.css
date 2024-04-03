@@ -6,12 +6,13 @@
   font-size: 13px;
   border: 0;
   padding: 5px;
-
+  z-index: 1;
   line-height: 1.5;
   font-weight: 500;
-  width: 180px;
+  width: 200px;
   border-radius: 9999rem;
   background: #efefef;
+  cursor: pointer;
   position: relative;
   display: flex;
   justify-content: center;
@@ -24,7 +25,8 @@
     color: #121212;
     width: 100%;
     text-align: center;
-    padding-block: 12px;
+    padding-block: 10px;
+    font-size: 18px;
     /* padding-left: 24px; */
     z-index: 2;
     transition: all 200ms ease;
@@ -63,5 +65,26 @@
     position: absolute;
     left: 1px;
     z-index: 1;
+  }
+}
+.tree-node.clicked {
+  opacity: 0.5;
+  background: repeating-linear-gradient(
+    -55deg,
+    #e1d5af,
+    #e1d5af 4px,
+    #333 4px,
+    #333 8px
+  );
+  & > span.text {
+    color: black;
+    width: 100%;
+    text-align: center;
+    padding-block: 10px;
+    font-size: 18px;
+    /* font-weight: 500; */
+    /* padding-left: 24px; */
+    z-index: 2;
+    transition: all 200ms ease;
   }
 }

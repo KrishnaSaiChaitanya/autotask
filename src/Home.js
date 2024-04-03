@@ -4,6 +4,7 @@ import Animation from "./Animation";
 import ButtonWithIcon from "./Button";
 import EngineComponent from "./EngineComponent";
 import Cards from "./Cards";
+import Engine from "./Engine";
 
 function Home() {
   const [isHovered, setIsHovered] = useState(false);
@@ -60,7 +61,7 @@ function Home() {
       <Cards />
       <h1 className="mb-0">Engine Component</h1>
       <div className="section-center">
-        <EngineComponent />
+        <Engine />
         {/* <Animation /> */}
       </div>
     </div>
