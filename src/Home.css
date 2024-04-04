@@ -19,12 +19,14 @@ body {
   width: 100%;
 }
 .section-center {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 90%;
   margin: auto;
-  height: 400px;
+  height: 760px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  margin-top: 25px;
+  /* margin-top: 25px; */
   margin-bottom: 30px;
   padding-top: 45px;
   z-index: 6;
@@ -540,4 +542,77 @@ input {
 
     top: -65px;
   }
+}
+
+.middle-container {
+  display: flex;
+}
+.side-container {
+  flex: 0 0 30%;
+}
+.checks-container {
+  /* border: 1px solid black; */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.checks-container .check {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  font-size: 16px;
+}
+.top-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.chips {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.actions-performed {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 400px;
+}
+
+/* chip css */
+
+.chip {
+  display: inline-flex;
+  flex-direction: row;
+  background-color: #e5e5e5;
+  border: none;
+  cursor: default;
+  height: 36px;
+  margin: 10px;
+  outline: none;
+  padding: 0;
+  font-size: 16px;
+  font-color: #333333;
+  font-family: "Open Sans", sans-serif;
+  white-space: nowrap;
+  align-items: center;
+  border-radius: 16px;
+  vertical-align: middle;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.chip-content {
+  cursor: inherit;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  color: #000;
+  white-space: nowrap;
+  padding-left: 18px;
+  padding-right: 18px;
 }

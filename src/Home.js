@@ -7,8 +7,33 @@ import Cards from "./Cards";
 import Engine from "./Engine";
 
 function Home() {
+  const [checksData, setChecksData] = useState([
+    { status: true, waiting: false },
+    { status: false, waiting: false },
+    { status: true, waiting: false },
+    { status: false, waiting: false },
+    { status: true, waiting: false },
+  ]);
+
+  const handlePendingIconClick = async () => {
+    for (let i = 0; i < checksData.length; i++) {
+      const updatedChecksData = checksData.map((item, index) => ({
+        ...item,
+        waiting: index > i,
+        status: index === i ? null : item.status,
+      }));
+      setChecksData(updatedChecksData);
+
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      const finalChecksData = [...checksData];
+      finalChecksData[i].status = Math.random() >= 0.5;
+      setChecksData(finalChecksData);
+    }
+  };
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
+  const chipData = ["Action 1", "Action 2", "Action 3"];
   return (
     <div>
       <img src="./logo-1.svg" className="logo" alt="" />
@@ -60,9 +85,70 @@ function Home() {
       </nav>
       <Cards />
       <h1 className="mb-0">Engine Component</h1>
-      <div className="section-center">
-        <Engine />
-        {/* <Animation /> */}
+      <div className="middle-container">
+        <div className="section-center">
+          <Engine />
+        </div>
+        <div className="side-container">
+          <div className="checks-container">
+            <div className="top-container">
+              <p style={{ width: "80px" }}>Run : 12min ago</p>
+              <h2>Checks</h2>
+              <img
+                src="./sync-icon.svg"
+                style={{ height: "40px" }}
+                onClick={handlePendingIconClick}
+              />
+            </div>
+            <div className="check">
+              <h3>Names</h3>
+              <h3>Status</h3>
+            </div>
+            {checksData.map((item, index) => (
+              <div className="check" key={index}>
+                <div>{`Check${index + 1}`}</div>
+                <div>
+                  {item.waiting ? (
+                    <span>waiting...</span>
+                  ) : (
+                    <>
+                      {item.status !== null && (
+                        <>
+                          {item.status ? (
+                            <i
+                              className="fa-solid fa-circle-check"
+                              style={{ fontSize: "25px", color: "green" }}
+                            ></i>
+                          ) : (
+                            <i
+                              className="fa-solid fa-circle-xmark"
+                              style={{ fontSize: "25px", color: "red" }}
+                            ></i>
+                          )}
+                        </>
+                      )}
+                      {item.status === null && (
+                        <i className="fa-solid fa-hourglass-start"></i>
+                      )}
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="actions-performed">
+            <div className="top-container">
+              <h2>Actions Performed</h2>
+            </div>
+            <div className="chips">
+              {chipData.map((chip, index) => (
+                <div className="chip" key={index}>
+                  <div className="chip-content">{chip}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
