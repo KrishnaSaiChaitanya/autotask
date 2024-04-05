@@ -17,10 +17,20 @@
 }
 
 .dashed-line {
-  border: 1px dashed #ffeba7;
-  width: 60%;
+  border: 1px dashed #df6c4f;
+  width: 100%;
   margin: auto;
-  margin: 13px;
+  margin-top: 20px;
+  margin: 25px;
+}
+.checkpoint-text {
+  margin-top: -38px;
+  background-color: #df6c4f;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  margin-bottom: 15px;
 }
 .clicked-tree-node {
   background: repeating-linear-gradient(

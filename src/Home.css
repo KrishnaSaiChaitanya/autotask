@@ -7,10 +7,10 @@ body {
   font-weight: 300;
   font-size: 15px;
   line-height: 1.7;
-  color: #ececee;
-  background-color: #1f2029;
+  color: black;
+  background-color: #93bdb8;
   overflow: hidden;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg");
+  /* background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg"); */
   background-position: center;
   background-repeat: repeat;
   background-size: 4%;
@@ -38,10 +38,10 @@ h1 {
   font-weight: 800;
   font-size: 3vw;
   line-height: 1;
-  color: #ffeba7;
+  color: #df6c4f;
   text-align: center;
-  -webkit-text-stroke: 2px #ffeba7;
-  text-stroke: 2px #ffeba7;
+  -webkit-text-stroke: 2px #df6c4f;
+  text-stroke: 2px #df6c4f;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   color: transparent;
@@ -75,8 +75,8 @@ h1 {
   z-index: 20;
   top: 0;
   left: 0;
-  border-top: 2px solid #ececee;
-  border-bottom: 2px solid #ececee;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
   transition: border-width 100ms 1500ms ease,
     top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
     height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
@@ -92,7 +92,7 @@ h1 {
   z-index: 20;
   top: 10px;
   right: 4px;
-  background-color: #ececee;
+  background-color: black;
   margin-top: -1px;
   transition: width 100ms 1750ms ease, right 100ms 1750ms ease,
     margin-top 100ms ease, transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -101,7 +101,7 @@ h1 {
   top: 10px;
   transform: rotate(45deg);
   height: 2px;
-  background-color: #ececee;
+  background-color: black;
   border-width: 0;
   transition: border-width 100ms 340ms ease,
     top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
@@ -130,8 +130,8 @@ h1 {
   margin: 0;
   z-index: 9;
   overflow: hidden;
-  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
-  background-color: #353746;
+  /* box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3); */
+  background-color: #e3a191;
   animation: border-transform 7s linear infinite;
   transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
     left 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
@@ -191,6 +191,12 @@ h1 {
   transform: translateY(-50%);
   list-style: none;
 }
+.nav ul h1 {
+  top: -35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
 .nav ul li {
   position: relative;
   display: block;
@@ -225,12 +231,12 @@ h1 {
   font-weight: 800;
   display: inline-block;
   position: relative;
-  color: #ececee;
+  color: black;
   transition: all 250ms linear;
 }
 .nav ul li a:hover {
   text-decoration: none;
-  color: #ffeba7;
+  color: #df6c4f;
 }
 .nav ul li a:after {
   display: block;
@@ -247,7 +253,7 @@ h1 {
 }
 .nav ul li h2 {
   font-family: "Montserrat", sans-serif;
-  color: #ffeba7;
+  color: #df6c4f;
 
   font-size: 24px;
 }
@@ -306,9 +312,9 @@ h1 {
     font-size: 9vw;
     -webkit-text-stroke: 2px transparent;
     text-stroke: 2px transparent;
-    -webkit-text-fill-color: #ffeba7;
-    text-fill-color: #ffeba7;
-    color: #ffeba7;
+    -webkit-text-fill-color: #df6c4f;
+    text-fill-color: #df6c4f;
+    color: #df6c4f;
   }
   .nav ul li a {
     font-size: 8vh;
@@ -317,11 +323,11 @@ h1 {
 .search-box {
   position: absolute;
 
-  top: 35%;
-  width: 400px;
+  top: -8%;
+  width: 350px;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #2c3441;
+  background-color: white;
   border-radius: 40px;
   padding: 10px 18px;
 }
@@ -342,7 +348,7 @@ h1 {
   font-size: 1rem;
   height: 40px;
   border-radius: 50%;
-  background-color: #a59f8c;
+  background-color: #df6c4f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -393,75 +399,6 @@ input {
 }
 
 /* Existing styles... */
-.icon-image {
-  opacity: 0;
-  transition: opacity 0.3s ease; /* Add transition for opacity */
-}
-.button1 {
-  font-size: 16px;
-  border: 0;
-  margin: 15px;
-  line-height: 1.5;
-  font-weight: 500;
-  width: 250px;
-  border-radius: 9999rem;
-  background: #efefef;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-
-  & > span.text {
-    color: #121212;
-    width: 100%;
-    text-align: left;
-    padding-block: 12px;
-    padding-left: 24px;
-    z-index: 2;
-    transition: all 200ms ease;
-  }
-
-  @media screen and (max-width: 391px) {
-    .button1 {
-      margin: 10px;
-    }
-  }
-
-  & > div.overlay {
-    color: #ededed;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 12px;
-    border-radius: inherit;
-    background: #242424;
-    position: absolute;
-    right: 1px;
-    z-index: 1;
-    transition: all 400ms ease;
-  }
-
-  &:is(:hover, :focus) {
-    & > span.text {
-      color: #ededed;
-    }
-
-    & > div.overlay {
-      width: calc(100% - 2px);
-      transition: width 200ms ease;
-    }
-  }
-}
-.button-group {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
 
 /* menu icon  */
 
@@ -491,14 +428,14 @@ input {
 .tooltip:before {
   border-width: 10px 8px 0 8px;
   border-style: solid;
-  border-color: #a59f8c transparent transparent transparent; /* Assuming #a59f8c is a variable for a specific color */
+  border-color: #df6c4f transparent transparent transparent; /* Assuming #DF6C4F is a variable for a specific color */
   top: -15px;
   transform: translateY(20px);
 }
 
 .tooltip:after {
   content: attr(data-tooltip);
-  background: #a59f8c; /* Assuming #a59f8c is a variable for a specific color */
+  background: #df6c4f; /* Assuming #DF6C4F is a variable for a specific color */
   width: 180px;
   height: 20px;
   font-size: 14px;

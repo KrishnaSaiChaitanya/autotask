@@ -46,39 +46,44 @@ function Home() {
       />
       <label htmlFor="menu-icon"></label>
       <nav className="nav">
-        <div className="search-box">
-          <input type="text" name="" id="" placeholder="search..." />
-          <a href="##" className="icon">
-            <svg viewBox="0 0 1000 1000" title="Search" className="icon-path">
-              <path
-                fill="currentColor"
-                d="M408 745a337 337 0 1 0 0-674 337 337 0 0 0 0 674zm239-19a396 396 0 0 1-239 80 398 398 0 1 1 319-159l247 248a56 56 0 0 1 0 79 56 56 0 0 1-79 0L647 726z"
-              />
-            </svg>
-          </a>
-        </div>
-
         <ul>
+          <h1>Ticket Toolkit</h1>
+          <div className="search-box">
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Search for Actions or Checks"
+            />
+            <a href="##" className="icon">
+              <svg viewBox="0 0 1000 1000" title="Search" className="icon-path">
+                <path
+                  fill="currentColor"
+                  d="M408 745a337 337 0 1 0 0-674 337 337 0 0 0 0 674zm239-19a396 396 0 0 1-239 80 398 398 0 1 1 319-159l247 248a56 56 0 0 1 0 79 56 56 0 0 1-79 0L647 726z"
+                />
+              </svg>
+            </a>
+          </div>
           <li>
             <h2>Suggested Actions</h2>
             <div className="buttons-container">
-              <ButtonWithIcon buttonText="Action 1" iconSrc="./info-icon.svg" />
-              <ButtonWithIcon buttonText="Action 2" iconSrc="./info-icon.svg" />
+              <ButtonWithIcon buttonText="Action 1" isAction={true} />
+              <ButtonWithIcon buttonText="Action 2" isAction={true} />
             </div>
             <div className="buttons-container">
-              <ButtonWithIcon buttonText="Action 3" iconSrc="./info-icon.svg" />
-              <ButtonWithIcon buttonText="Action 4" iconSrc="./info-icon.svg" />
+              <ButtonWithIcon buttonText="Action 3" isAction={true} />
+              <ButtonWithIcon buttonText="Action 4" isAction={true} />
             </div>
           </li>
           <li>
             <h2>Suggested Checks</h2>
             <div className="buttons-container">
-              <ButtonWithIcon buttonText="Check 1" iconSrc="./info-icon.svg" />
-              <ButtonWithIcon buttonText="Check 2" iconSrc="./info-icon.svg" />
+              <ButtonWithIcon buttonText="Check 1" isAction={false} />
+              <ButtonWithIcon buttonText="Check 2" isAction={false} />
             </div>
             <div className="buttons-container">
-              <ButtonWithIcon buttonText="Check 3" iconSrc="./info-icon.svg" />
-              <ButtonWithIcon buttonText="Check 4" iconSrc="./info-icon.svg" />
+              <ButtonWithIcon buttonText="Check 3" isAction={false} />
+              <ButtonWithIcon buttonText="Check 4" isAction={false} />
             </div>
           </li>
         </ul>

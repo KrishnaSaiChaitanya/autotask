@@ -11,7 +11,7 @@
   font-weight: 500;
   width: 200px;
   border-radius: 9999rem;
-  background: #efefef;
+  /* background: #efefef; */
   cursor: pointer;
   position: relative;
   display: flex;
@@ -24,10 +24,10 @@
   & > span.text {
     color: #121212;
     width: 100%;
-    text-align: center;
+    text-align: left;
     padding-block: 10px;
     font-size: 18px;
-    /* padding-left: 24px; */
+    padding-left: 24px;
     z-index: 2;
     transition: all 200ms ease;
   }
@@ -67,23 +67,26 @@
     z-index: 1;
   }
 }
-.tree-node.clicked {
+.tree-node.faded {
   opacity: 0.5;
-  background: repeating-linear-gradient(
+  cursor: text;
+}
+.tree-node.clicked {
+  /* background: repeating-linear-gradient(
     -55deg,
     #e1d5af,
     #e1d5af 4px,
     #333 4px,
     #333 8px
-  );
+  ); */
   & > span.text {
     color: black;
     width: 100%;
-    text-align: center;
+    text-align: left;
     padding-block: 10px;
     font-size: 18px;
     /* font-weight: 500; */
-    /* padding-left: 24px; */
+    padding-left: 24px;
     z-index: 2;
     transition: all 200ms ease;
   }

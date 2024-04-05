@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./TreeNode.css";
 
-function TreeNode({ name, percentage, status, onClick, clicked }) {
-  console.log(clicked, "my value");
-  // Determine which image and background color to use based on the status
+function TreeNode({ name, percentage, status, onClick, clicked, isFaded, id }) {
+  console.log(id, "my value");
   let statusImage, backgroundColor;
-  let iconSize = "20px"; // Default icon size
-
+  let iconSize = "20px";
+  const getBackgroundColor = (key) => {
+    const hue = (key * 5) % 360;
+    return `hsl(${hue}, 80%, 50%)`;
+  };
   if (status === 1) {
     statusImage = "./tick-icon.svg";
     backgroundColor = "green";
@@ -22,14 +24,27 @@ function TreeNode({ name, percentage, status, onClick, clicked }) {
     iconSize = "30px"; // Adjust icon size for status -1
   }
 
+  const randomBorderColor = () => {
+    const random = Math.random();
+    return status === 0 ? "green" : "red";
+  };
+
   return (
     <div className="button-group" onClick={onClick}>
-      <button className={`tree-node ${clicked ? "clicked" : ""}`}>
-        <div className="overlay-start" style={{ backgroundColor }}>
+      <button
+        className={`tree-node ${clicked ? "clicked" : ""}  ${
+          isFaded ? "faded" : ""
+        }`}
+        style={{
+          border: clicked ? `2px solid ${randomBorderColor()}` : "",
+          backgroundColor: getBackgroundColor(id),
+        }}
+      >
+        {/* <div className="overlay-start" style={{ backgroundColor }}>
           {statusImage && (
             <img src={statusImage} style={{ height: iconSize }} />
           )}
-        </div>
+        </div> */}
         <span className="text">{name}</span>
         <div className="overlay">
           <span>{percentage}%</span>
