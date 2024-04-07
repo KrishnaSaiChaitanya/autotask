@@ -10,10 +10,7 @@ function ButtonWithIcon({ buttonText, isAction }) {
   };
   return (
     <div className="button-group">
-      <button
-        className={isAction ? "action-button" : "button1"}
-        onClick={toggleDialog}
-      >
+      <button className={isAction ? "action-button" : "button1"}>
         <span className="text">{buttonText}</span>
         <div className="overlay">
           <svg

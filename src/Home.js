@@ -34,6 +34,12 @@ function Home() {
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const chipData = ["Action 1", "Action 2", "Action 3"];
+  const [showDialog, setShowDialog] = useState(false);
+
+  const toggleDialog = () => {
+    setShowDialog(!showDialog);
+  };
+
   return (
     <div>
       <img src="./logo-1.svg" className="logo" alt="" />
@@ -67,25 +73,84 @@ function Home() {
           <li>
             <h2>Suggested Actions</h2>
             <div className="buttons-container">
-              <ButtonWithIcon buttonText="Action 1" isAction={true} />
-              <ButtonWithIcon buttonText="Action 2" isAction={true} />
+              <div onClick={toggleDialog}>
+                <ButtonWithIcon buttonText="Action 1" isAction={true} />
+              </div>
+              <div onClick={toggleDialog}>
+                <ButtonWithIcon buttonText="Action 2" isAction={true} />
+              </div>
             </div>
             <div className="buttons-container">
-              <ButtonWithIcon buttonText="Action 3" isAction={true} />
-              <ButtonWithIcon buttonText="Action 4" isAction={true} />
+              <ButtonWithIcon
+                buttonText="Action 3"
+                isAction={true}
+                onClick={toggleDialog}
+              />
+              <ButtonWithIcon
+                buttonText="Action 4"
+                isAction={true}
+                onClick={toggleDialog}
+              />
             </div>
           </li>
           <li>
             <h2>Suggested Checks</h2>
             <div className="buttons-container">
-              <ButtonWithIcon buttonText="Check 1" isAction={false} />
+              <div onClick={toggleDialog}>
+                <ButtonWithIcon buttonText="Check 1" isAction={false} />
+              </div>
               <ButtonWithIcon buttonText="Check 2" isAction={false} />
             </div>
             <div className="buttons-container">
-              <ButtonWithIcon buttonText="Check 3" isAction={false} />
-              <ButtonWithIcon buttonText="Check 4" isAction={false} />
+              <div onClick={toggleDialog}>
+                <ButtonWithIcon buttonText="Check 3" isAction={false} />
+              </div>
+              <div onClick={toggleDialog}>
+                <ButtonWithIcon buttonText="Check 4" isAction={false} />
+              </div>
             </div>
           </li>
+          <div>
+            <div className="button-group-bottom">
+              <button className="first-button">
+                <i class="fas fa-tasks"></i> &nbsp; Add manual task
+              </button>
+              <button className="second-button">
+                <i class="fas fa-circle-info"></i> &nbsp;Add warning
+              </button>
+            </div>
+          </div>
+          <div
+            id="popup-wrapper"
+            className={`popup-container ${showDialog ? "show" : ""}`}
+          >
+            <div className="popup-content">
+              <span id="close" onClick={toggleDialog}>
+                &times;
+              </span>
+              <div className="card">
+                <h2>Action 1</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Eius, aliquam. Maiores, eaque repellat tenetur blanditiis
+                  magnam aspernatur delectus eius cumque tempore atque rem ab?
+                  Beatae, rem. Tempora error id architecto.
+                </p>
+                <div className="details">
+                  <p>Success Rate: 90%</p>
+                  <p>Last Ran Time: 10:00 AM</p>
+                </div>
+              </div>
+              <div className="button-group">
+                <button className="run-button" onClick={() => toggleDialog()}>
+                  <i class="fa-solid fa-play"></i> &nbsp; Run
+                </button>
+                <button className="dummy-button">
+                  <i class="fa-solid fa-calendar-days"></i> &nbsp;Schedule
+                </button>
+              </div>
+            </div>
+          </div>
         </ul>
       </nav>
       <Cards />

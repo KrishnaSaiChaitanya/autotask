@@ -2,15 +2,20 @@
   opacity: 0;
   transition: opacity 0.3s ease; /* Add transition for opacity */
 }
+.tree-node:hover {
+  transform: scale(1.1);
+}
 .tree-node {
   font-size: 13px;
   border: 0;
+  transition: transform 0.3s ease;
   padding: 5px;
   z-index: 1;
   line-height: 1.5;
   font-weight: 500;
   width: 200px;
   border-radius: 9999rem;
+  background: linear-gradient(to right, #304ffe, #7c4dff);
   /* background: #efefef; */
   cursor: pointer;
   position: relative;
@@ -71,6 +76,9 @@
   opacity: 0.5;
   cursor: text;
 }
+.tree-node.faded:hover {
+  transform: scale(1);
+}
 .tree-node.clicked {
   /* background: repeating-linear-gradient(
     -55deg,
@@ -90,4 +98,10 @@
     z-index: 2;
     transition: all 200ms ease;
   }
+}
+.display-image {
+  transition: transform 0.5s ease-in-out;
+}
+.zoom-in {
+  transform: scale(1.1); /* Zoom in effect */
 }

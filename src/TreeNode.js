@@ -1,22 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./TreeNode.css";
 
-function TreeNode({ name, percentage, status, onClick, clicked, isFaded, id }) {
-  console.log(id, "my value");
+function TreeNode({
+  name,
+  percentage,
+  status,
+  onClick,
+  clicked,
+  isFaded,
+  id,
+  isPending,
+}) {
+  const [displayImage, setDisplayImage] = useState(false);
   let statusImage, backgroundColor;
   let iconSize = "20px";
+
   const getBackgroundColor = (key) => {
     const hue = (key * 5) % 360;
     return `hsl(${hue}, 80%, 50%)`;
   };
+
+  useEffect(() => {
+    if (!isPending && clicked) {
+      setDisplayImage(true);
+      const timer = setTimeout(() => {
+        setDisplayImage(false);
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isPending]);
+
   if (status === 1) {
     statusImage = "./tick-icon.svg";
     backgroundColor = "green";
-    iconSize = "20px"; // Adjust icon size for status 1
+    iconSize = "30px"; // Adjust icon size for status 1
   } else if (status === 0) {
     statusImage = "./fail-icon.svg";
     backgroundColor = "red";
-    iconSize = "35px"; // Adjust icon size for status 0
+    iconSize = "30px"; // Adjust icon size for status 0
   } else {
     // For status -1
     statusImage = "./pending-icon.svg";
@@ -37,15 +59,23 @@ function TreeNode({ name, percentage, status, onClick, clicked, isFaded, id }) {
         }`}
         style={{
           border: clicked ? `2px solid ${randomBorderColor()}` : "",
-          backgroundColor: getBackgroundColor(id),
+          // backgroundColor: getBackgroundColor(id),
         }}
       >
-        {/* <div className="overlay-start" style={{ backgroundColor }}>
-          {statusImage && (
-            <img src={statusImage} style={{ height: iconSize }} />
-          )}
-        </div> */}
-        <span className="text">{name}</span>
+        {displayImage && (
+          <img
+            src={statusImage}
+            className={`display-image zoom-in`}
+            style={{
+              height: iconSize,
+            }}
+          />
+        )}
+        <span className="text" style={{ display: "flex" }}>
+          {/* <div class="loader"></div>
+          {name} */}
+          {isPending ? <div class="loader"></div> : <span>{name}</span>}
+        </span>
         <div className="overlay">
           <span>{percentage}%</span>
         </div>

@@ -18,3 +18,36 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.8); /* Darker color on hover */
 }
+
+/* Loader Animation */
+
+.loader {
+  margin: auto;
+  margin-left: 45px;
+  border: 4px solid #bcd3c7;
+  width: 20px;
+  height: 20px;
+  border-top-color: #1abc9c;
+  border-bottom-color: #1abc9c;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 1.5s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}

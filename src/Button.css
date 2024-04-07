@@ -143,26 +143,27 @@
 }
 
 .run-button {
-  padding: 10px;
+  padding: 12px;
+  border-radius: 20px;
   line-height: 1.5;
   font-weight: 500;
-
   background-color: #007bff; /* Blue */
   color: white;
-
+  font-size: 16px;
   width: 160px !important;
   border: none;
-  border-radius: 5px;
+
   cursor: pointer;
 }
 
 .dummy-button {
-  padding: 10px;
+  padding: 12px;
   background-color: #6c757d; /* Grey */
   width: 160px !important;
+  font-size: 16px;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
 }
 
@@ -185,7 +186,7 @@
   z-index: 1;
   left: 40%;
 
-  top: 20%;
+  top: 12%;
   width: 30%;
 
   height: 100%;
@@ -193,14 +194,17 @@
 }
 .popup-content {
   background-color: #fefefe;
-  /* margin: auto; */
-  padding: 20px;
-  /* border: 1px solid #888; */
+  border-radius: 20px;
+
+  padding: 15px;
   width: 60%;
+}
+.popup-content .details {
+  display: flex;
+  justify-content: space-between;
 }
 .popup-content p {
   font-size: 17px;
-  padding: 10px;
   line-height: 20px;
 }
 .popup-content span {
