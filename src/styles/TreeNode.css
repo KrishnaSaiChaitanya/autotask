@@ -7,7 +7,8 @@
 }
 .tree-node {
   font-size: 13px;
-  border: 0;
+
+  border: 2px solid white;
   transition: transform 0.3s ease;
   padding: 5px;
   z-index: 1;
