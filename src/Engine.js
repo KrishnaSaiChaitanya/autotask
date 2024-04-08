@@ -104,7 +104,7 @@ const Engine = () => {
       setTimeout(() => {
         setPendingNode(null);
         setCurrentLevel(level + 1);
-      }, 3000);
+      }, 4000);
       // const prevNodes = TreeData[currentLevel - 1].nodes;
       // prevNodes.forEach((node) => {
       //   const prevButton = document.getElementById(`node-${node.id}`);

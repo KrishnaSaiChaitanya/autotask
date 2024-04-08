@@ -32,7 +32,7 @@
     text-align: left;
     padding-block: 10px;
     font-size: 18px;
-    padding-left: 24px;
+    padding-left: 10px;
     z-index: 2;
     transition: all 200ms ease;
   }
@@ -94,7 +94,7 @@
     padding-block: 10px;
     font-size: 18px;
     /* font-weight: 500; */
-    padding-left: 24px;
+    padding-left: 10px;
     z-index: 2;
     transition: all 200ms ease;
   }

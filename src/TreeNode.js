@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./TreeNode.css";
+import TreeLoader from "./TreeLoader";
 
 function TreeNode({
   name,
@@ -58,11 +59,11 @@ function TreeNode({
           isFaded ? "faded" : ""
         }`}
         style={{
-          border: clicked ? `2px solid ${randomBorderColor()}` : "",
+          border: clicked && !isPending ? `2px solid ${backgroundColor}` : "",
           // backgroundColor: getBackgroundColor(id),
         }}
       >
-        {displayImage && (
+        {/* {displayImage && (
           <img
             src={statusImage}
             className={`display-image zoom-in`}
@@ -70,14 +71,24 @@ function TreeNode({
               height: iconSize,
             }}
           />
-        )}
+        )} */}
         <span className="text" style={{ display: "flex" }}>
-          {/* <div class="loader"></div>
-          {name} */}
-          {isPending ? <div class="loader"></div> : <span>{name}</span>}
+          {isPending && <TreeLoader />}
+          {name}
+          {/* {isPending ? <TreeLoader /> : <span>{name}</span>} */}
         </span>
         <div className="overlay">
-          <span>{percentage}%</span>
+          {clicked && !isPending ? (
+            <img
+              src={statusImage}
+              className={`display-image zoom-in`}
+              style={{
+                height: iconSize,
+              }}
+            />
+          ) : (
+            <span>{percentage}%</span>
+          )}
         </div>
       </button>
     </div>
