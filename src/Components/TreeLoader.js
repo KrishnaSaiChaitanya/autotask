@@ -1,5 +1,5 @@
 import React from "react";
-import "./TreeLoader.css";
+import "../styles/TreeLoader.css";
 
 function TreeLoader() {
   return (

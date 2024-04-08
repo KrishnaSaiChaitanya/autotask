@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Button.css";
+import "../styles/Button.css";
 
 function ButtonWithIcon({ buttonText, isAction }) {
   const [showDialog, setShowDialog] = useState(false);

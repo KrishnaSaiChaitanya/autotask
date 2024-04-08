@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./Home.css";
-import Animation from "./Animation";
-import ButtonWithIcon from "./Button";
-import EngineComponent from "./EngineComponent";
-import Cards from "./Cards";
-import Engine from "./Engine";
+import "../styles/Home.css";
+import Animation from "../Components/LoadingAnimation";
+import ButtonWithIcon from "../Components/Button";
+import EngineComponent from "../Components/EngineComponent";
+import Cards from "../Components/Cards";
+import Engine from "../Components/Engine";
 
 function Home() {
   const [checksData, setChecksData] = useState([

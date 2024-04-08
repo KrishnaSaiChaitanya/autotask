@@ -50,7 +50,7 @@
 .card-back {
   position: absolute;
   top: 0;
-  background-color: #eb8d76;
+  background-color: var(--cards-color);
   color: #000;
   left: 0;
   border-radius: 20px;
@@ -80,18 +80,7 @@
   font-weight: bold;
   margin: 0;
 }
-.card-front.bg-violet {
-  background-color: #702082;
-}
-.card-front.bg-magenta {
-  background-color: #c110a0;
-}
-.card-front.bg-blue {
-  background-color: #00a0d2;
-}
-.card-front.bg-green {
-  background-color: #00c389;
-}
+
 .card-back {
   background-color: #1e1e1e;
   -webkit-transform: rotateY(-180deg);

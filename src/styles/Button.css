@@ -3,7 +3,7 @@
   transition: opacity 0.3s ease; /* Add transition for opacity */
 }
 .action-button {
-  background: linear-gradient(to right, #304ffe, #7c4dff);
+  background: var(--check-button-color);
   transition: transform 0.3s ease;
   font-size: 16px;
   border: 0px;
@@ -60,7 +60,7 @@
 .button1 {
   font-size: 16px;
   transition: transform 0.3s ease;
-  background: linear-gradient(to right, #ff5722, #ff8a65);
+  background: var(--action-button-color);
   border: 0;
   margin: 15px;
   line-height: 1.5;

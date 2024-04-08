@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./TreeNode.css";
+import "../styles/TreeNode.css";
 import TreeLoader from "./TreeLoader";
 
 function TreeNode({

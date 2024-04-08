@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./EngineComponent.css";
+import "../styles/EngineComponent.css";
 import ReactDOM from "react-dom";
 import ButtonWithIcon from "./Button";
 import TreeNode from "./TreeNode";
-import Animation from "./Animation";
+import Animation from "./LoadingAnimation";
 
 const TreeData = [
   {

@@ -1,6 +1,6 @@
 import React from "react";
-import "./Animation.css";
-function Animation() {
+import "../styles/LoadingAnimation.css";
+function LoadingAnimation() {
   return (
     <div className="three-body">
       <div className="three-body__dot"></div>

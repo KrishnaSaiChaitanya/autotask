@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import TreeNode from "./TreeNode";
-import Animation from "./Animation"; // Import your Animation component
-import "./Engine.css";
+import Animation from "./LoadingAnimation"; // Import your Animation component
+import "../styles/Engine.css";
+import TreeData from "../Data.json";
 
 const Engine = () => {
   const [currentLevel, setCurrentLevel] = useState(0);
@@ -19,70 +20,6 @@ const Engine = () => {
     }
   };
 
-  const TreeData = [
-    {
-      level: 0,
-      nodes: [
-        {
-          id: 1,
-          task_name: "Action 1",
-          status: 0,
-          percentage: 50,
-          children: [],
-        },
-      ],
-    },
-    {
-      level: 1,
-      nodes: [
-        {
-          id: 2,
-          task_name: "Action 2",
-          status: 0,
-          percentage: 10,
-          children: [],
-        },
-        {
-          id: 3,
-          task_name: "Action 3",
-          status: 0,
-          percentage: 35,
-          children: [],
-        },
-        {
-          id: 4,
-          task_name: "Action 4",
-          status: 1,
-          percentage: 100,
-          children: [],
-        },
-      ],
-    },
-    {
-      level: 2,
-      nodes: [
-        { id: 5, task_name: "Action 6", status: 0, percentage: 30 },
-        { id: 6, task_name: "Action 7", status: 0, percentage: 8 },
-        { id: 7, task_name: "Action 8", status: 1, percentage: 0 },
-      ],
-    },
-    {
-      level: 3,
-      nodes: [
-        { id: 8, task_name: "Action 9", status: 1, percentage: 20 },
-        { id: 9, task_name: "Action 10", status: 0, percentage: 60 },
-        { id: 10, task_name: "Action 11", status: 0, percentage: 0 },
-        { id: 11, task_name: "Action 12", status: 1, percentage: 100 },
-      ],
-    },
-    {
-      level: 4,
-      nodes: [
-        { id: 12, task_name: "Action 12", status: 0, percentage: 50 },
-        { id: 13, task_name: "Action 13", status: 1, percentage: 0 },
-      ],
-    },
-  ];
   const [clickedNodes, setClickedNodes] = useState([]);
   const [pendingNode, setPendingNode] = useState([]);
 

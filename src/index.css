@@ -1,22 +1,29 @@
 ::-webkit-scrollbar {
-  width: 10px; /* Width of the scrollbar */
-  height: 10px; /* Height of the scrollbar */
+  width: 10px;
+  height: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: transparent; /* Transparent background */
+  background: transparent;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: transparent;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.8); /* Darker color on hover */
+  background: rgba(0, 0, 0, 0.8);
+}
+
+:root {
+  --Home-background-color: #93bdb8;
+  --primary-color: #df6c4f;
+  --cards-color: #eb8d76;
+  --check-button-color: linear-gradient(to right, #304ffe, #7c4dff);
+  --action-button-color: linear-gradient(to right, #ff5722, #ff8a65);
 }
 
 /* Loader Animation */
